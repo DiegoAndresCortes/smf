@@ -5542,8 +5542,8 @@ function setupMenuContext()
 			'login' => array(
 				'title' => $txt['login'],
 				'href' => $scripturl . '?action=login',
-				'onclick' => 'return reqOverlayDiv(this.href, ' . JavaScriptEscape($txt['login']) . ');',
-				'show' => $user_info['is_guest'] && !empty($settings['login_main_menu']),
+				'onclick' => 'return reqOverlayDiv(this.href, ' . JavaScriptEscape($txt['login']) . ', \'login\');',
+				'show' => $user_info['is_guest'],
 				'sub_buttons' => array(
 				),
 				'is_last' => !$context['right_to_left'],
