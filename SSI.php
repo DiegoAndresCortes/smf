@@ -18,7 +18,7 @@ if (defined('SMF'))
 define('SMF', 'SSI');
 define('SMF_VERSION', '2.1.3');
 define('SMF_FULL_VERSION', 'SMF ' . SMF_VERSION);
-define('SMF_SOFTWARE_YEAR', '2022');
+define('SMF_SOFTWARE_YEAR', '2023');
 define('JQUERY_VERSION', '3.6.3');
 define('POSTGRE_TITLE', 'PostgreSQL');
 define('MYSQL_TITLE', 'MySQL');
