@@ -90,6 +90,7 @@ function template_init()
  */
 function template_html_above()
 {
+	Theme::loadCSSFile('https://use.fontawesome.com/releases/v6.1.2/css/all.css', array('external' => true));
 	// Show right to left, the language code, and the character set for ease of translating.
 	echo '<!DOCTYPE html>
 <html', Utils::$context['right_to_left'] ? ' dir="rtl"' : '', !empty(Lang::$txt['lang_locale']) ? ' lang="' . str_replace("_", "-", substr(Lang::$txt['lang_locale'], 0, strcspn(Lang::$txt['lang_locale'], "."))) . '"' : '', !empty(Theme::$current->settings['theme_variants']) ? str_replace('_', '', ' data-variant=' . (Utils::$context['theme_variant'] ?: 'default')) : '', '>
@@ -124,6 +125,8 @@ function template_html_above()
 			'integrate_load_theme' hook for adding multiple files, or using
 			'integrate_pre_css_output', 'integrate_pre_javascript_output' for a single file.
 	*/
+
+	Theme::loadCSSFile('custom.css', array('minimize' => true));
 
 	// load in any css from mods or themes so they can overwrite if wanted
 	Theme::template_css();
