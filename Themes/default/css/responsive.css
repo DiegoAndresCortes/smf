@@ -848,4 +848,8 @@
 	.inlineblock_480 {
 		display: inline-block;
 	}
+	/* Recaptcha resize */
+	.g-recaptcha {
+        scale: 0.75;
+	}
 }
