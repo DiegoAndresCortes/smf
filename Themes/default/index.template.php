@@ -125,8 +125,6 @@ function template_html_above()
 			'integrate_pre_css_output', 'integrate_pre_javascript_output' for a single file.
 	*/
 
-	Theme::loadCSSFile('custom.css', array('minimize' => true));
-
 	// load in any css from mods or themes so they can overwrite if wanted
 	Theme::template_css();
 
@@ -278,6 +276,16 @@ function template_body_above()
 						<div id="profile_menu" class="top_menu"></div>
 					</li>';
 
+		// Firstly, the user's menu
+		echo '
+				<li>
+					<a href="', Config::$scripturl, '?action=profile"', !empty(Utils::$context['self_profile']) ? ' class="active"' : '', ' id="profile_menu_top" title="', Lang::$txt['profile'], '">
+						', User::$me->avatar['image'], '
+						<span class="text-label">', User::$me->name, '</span>
+					</a>
+					<div id="profile_menu" class="top_menu"></div>
+				</li>';
+
 		// A logout button for people without JavaScript.
 		if (empty(Theme::$current->settings['login_main_menu']))
 			echo '
@@ -352,7 +360,7 @@ function template_body_above()
 	echo '
 	<div id="wrapper">';
 
-	theme_linktree();
+		theme_linktree();
 
 	// The main content should go here.
 	echo '
