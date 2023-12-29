@@ -276,15 +276,15 @@ function template_body_above()
 						<div id="profile_menu" class="top_menu"></div>
 					</li>';
 
-		// Firstly, the user's menu
+		// The user's menu
 		echo '
-				<li>
-					<a href="', Config::$scripturl, '?action=profile"', !empty(Utils::$context['self_profile']) ? ' class="active"' : '', ' id="profile_menu_top" title="', Lang::$txt['profile'], '">
-						', User::$me->avatar['image'], '
-						<span class="text-label">', User::$me->name, '</span>
-					</a>
-					<div id="profile_menu" class="top_menu"></div>
-				</li>';
+					<li>
+						<a href="', Config::$scripturl, '?action=profile"', !empty(Utils::$context['self_profile']) ? ' class="active"' : '', ' id="profile_menu_top" title="', Lang::$txt['profile'], '">
+							', User::$me->avatar['image'], '
+							<span class="text-label">', User::$me->name, '</span>
+						</a>
+						<div id="profile_menu" class="top_menu"></div>
+					</li>';
 
 		// A logout button for people without JavaScript.
 		if (empty(Theme::$current->settings['login_main_menu']))
@@ -335,8 +335,8 @@ function template_body_above()
 					</li>';
 		}
 	}
+	// In maintenance mode, only login is allowed and don't show OverlayDiv
 	else
-		// In maintenance mode, only login is allowed and don't show OverlayDiv
 		echo '
 				<li>', Lang::getTxt(
 					'welcome_guest',
