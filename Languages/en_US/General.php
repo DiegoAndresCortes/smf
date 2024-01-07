@@ -122,6 +122,7 @@ $txt['home'] = 'Home';
 $txt['page'] = 'Page';
 $txt['prev'] = 'Previous page';
 $txt['next'] = 'Next page';
+$txt['breadcrumb'] = 'Breadcrumb';
 
 $txt['lock_unlock'] = 'Lock/Unlock Topic';
 $txt['post'] = 'Post';
