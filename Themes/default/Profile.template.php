@@ -170,7 +170,7 @@ function template_summary()
 {
 	// Display the basic information about the user
 	echo '
-	<div id="profileview" class="roundframe flow_auto noup">
+	<div id="profileview" class="summary roundframe flow_auto noup">
 		<div id="basicinfo">';
 
 	// Are there any custom profile fields for above the name?

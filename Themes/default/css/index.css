@@ -3535,7 +3535,7 @@ tr.windowbg td, tr.bg td, .table_grid tr td {
 /* Styles for the profile section.
 ------------------------------------------------- */
 /* The basic user info on the left */
-#profileview {
+#profileview.summary {
 	display: grid;
 	gap: var(--profilesummary-gap);
 	grid: var(--profilesummary-grid);
