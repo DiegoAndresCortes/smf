@@ -147,8 +147,8 @@ function template_show_upcoming_list($grid_name)
 						echo ' ', $event['tz_abbrev'], '</time>';
 				}
 
-				if (!empty($event['location']))
-					echo '<br>', $event['location'];
+				if ($event['location'] != '')
+					echo '<br>', nl2br($event['location']);
 
 				echo '
 					</li>';
@@ -875,7 +875,7 @@ function template_event_post()
 						</div><!-- #event_time_options -->
 						<div>
 							<span class="label">', Lang::$txt['location'], '</span>
-							<input type="text" name="event_location" id="event_location" maxlength="255" value="', !empty(Utils::$context['event']['location']) ? Utils::$context['event']['location'] : '', '">
+							<textarea name="event_location" id="event_location" maxlength="255" style="height: 100px;" maxlength="255">', Utils::$context['event']['location'], '</textarea>
 						</div>
 					</fieldset>';
 
