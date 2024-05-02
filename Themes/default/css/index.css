@@ -3169,7 +3169,7 @@ dl.addrules dt.floatleft {
 	margin-inline: var(--window-margin-inline);
 	overflow: auto;
 }
-:nth-child(even of .windowbg), .bg.even {
+:nth-child(even of .windowbg):not(.no_odd), .bg.even {
 	background: var(--window-even-bg);
 }
 /* Special treatment for #forumposts area */
