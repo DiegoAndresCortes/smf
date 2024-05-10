@@ -544,7 +544,7 @@ function template_menu()
 	foreach (Utils::$context['menu_buttons'] as $act => $button)
 	{
 		echo '
-						<li class="button_', $act, '', !empty($button['sub_buttons']) ? ' subsections"' : '"', '>
+						<li class="button_', $act, !empty($button['sub_buttons']) ? ' subsections' : '', '">
 							<a', $button['active_button'] ? ' class="active"' : '', ' href="', $button['href'], '"', isset($button['target']) ? ' target="' . $button['target'] . '"' : '', isset($button['onclick']) ? ' onclick="' . $button['onclick'] . '"' : '', '>
 								', $button['icon'], '
 								<span class="textmenu">
@@ -659,7 +659,7 @@ function template_button_strip($button_strip, $direction = '', $strip_options = 
 					$button .= '
 							<li>
 								<a href="' . $element['url'] . '">
-									<span>' . Lang::$txt[$element['text']] . '</span>';
+									<span class="text-label">' . Lang::$txt[$element['text']] . '</span>';
 					if (isset(Lang::$txt[$element['text'] . '_desc']))
 						$button .= '
 									<span>' . Lang::$txt[$element['text'] . '_desc'] . '</span>';

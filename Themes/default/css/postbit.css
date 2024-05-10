@@ -108,6 +108,7 @@
 .keyinfo {
 	align-items: center;
 	display: grid;
+	gap: .75em;
 	grid: auto auto / 1fr auto;
 }
 .keyinfo .postinfo {
@@ -141,11 +142,11 @@
 	grid-row: 1/3;
 	line-height: 1.5em;
 }
-.keyinfo h5.subject_title {
-	font-size: 1em;
-}
 #reason::before {
 	content: " - ";
+}
+.subject_title {
+	grid-column: 1/3;
 }
 .subject_title a {
 	font-size: 0.9em;
@@ -153,6 +154,9 @@
 }
 .subject_hidden a {
 	display: none;
+}
+.subject_title input {
+	width: 100%;
 }
 
 /* Post or message */
@@ -190,4 +194,16 @@
 /* Signatures */
 .post_wrapper .signature {
 	padding: 1em .75em;
+}
+
+/* Quick Edit */
+input.quickModifyMargin {
+	margin-block: .5em;
+	width: 100%;
+}
+#quick_edit_body_container textarea {
+	margin-block: .75em;
+	min-height: 150px;
+	padding: .75em;
+	width: 100%;
 }

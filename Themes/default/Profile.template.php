@@ -47,7 +47,6 @@ function template_profile_below()
 function template_profile_popup()
 {
 	// Unlike almost every other template, this is designed to be included into the HTML directly via $().load()
-
 	echo '
 		<div class="header">
 			<a href="', Config::$scripturl, '?action=profile;u=', User::$me->id, ';area=forumprofile;">
@@ -79,8 +78,8 @@ function template_profile_popup()
 	}
 
 	echo '
-			</ol>
-		</div><!-- .profile_user_links -->';
+			</ol><!-- .profile_user_links -->
+		</div>';
 }
 
 /**
@@ -124,12 +123,12 @@ function template_alerts_popup()
 				<div class="time">
 					', $details['time'], '
 				</div>
-			</', !$details['show_links'] ? 'a' : 'div', '>';
+			</', !$details['show_links'] ? 'a' : 'div', '><!-- .generic_notification -->';
 		}
 	}
 
 	echo '
-		</div><!-- .generic_notification -->
+		</div>
 		<script>
 			function markAlertsRead(obj) {
 				ajax_indicator(true);

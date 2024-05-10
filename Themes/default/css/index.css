@@ -150,7 +150,7 @@ input[type="number"][size="6"] {
 	width: calc(6ch + 2em + var(--input-padding-inline));
 }
 /* Buttons styling */
-button, .button, a.button, input[type="button"] {
+.button, a.button, input[type="button"] {
 	align-items: center;
 	background: var(--button-bg);
 	border-color: var(--button-border-color);
@@ -174,7 +174,7 @@ button, .button, a.button, input[type="button"] {
 	text-transform: var(--button-text-transform);
 	user-select: none;
 }
-button:hover, .button:hover, input[type="button"]:hover {
+.button:hover, input[type="button"]:hover {
 	background: var(--button-bg_hover);
 	border-color: var(--button-border-color_hover);
 	border-radius: var(--button-border-radius_hover);
@@ -185,7 +185,7 @@ button:hover, .button:hover, input[type="button"]:hover {
 	text-decoration: var(--button-text-decoration_hover);
 	text-shadow: var(--button-text-shadow_hover);
 }
-button:focus, .button:focus, input[type="button"]:focus {
+.button:focus, input[type="button"]:focus {
 	background: var(--button-bg_focus);
 	border-color: var(--button-border-color_focus);
 	border-radius: var(--button-border-radius_focus);
@@ -196,7 +196,7 @@ button:focus, .button:focus, input[type="button"]:focus {
 	text-decoration: var(--button-text-decoration_focus);
 	text-shadow: var(--button-text-shadow_focus);
 }
-button.active, .button.active, input[type="button"].active {
+.button.active, input[type="button"].active {
 	background: var(--button-bg_active);
 	border-color: var(--button-border-color_active);
 	border-radius: var(--button-border-radius_active);
@@ -207,10 +207,10 @@ button.active, .button.active, input[type="button"].active {
 	text-decoration: var(--button-text-decoration_active);
 	text-shadow: var(--button-text-shadow_active);
 }
-button.active:is(:hover, :focus, :focus-visible), .button.active:is(:hover, :focus, :focus-visible), input[type="button"].active:is(:hover, :focus, :focus-visible) {
+.button.active:is(:hover, :focus, :focus-visible), input[type="button"].active:is(:hover, :focus, :focus-visible) {
 	color: var(--button-color_active_hover);
 }
-button:focus-visible, .button:focus-visible, input[type="button"]:focus-visible {
+.button:focus-visible, input[type="button"]:focus-visible {
 	outline: var(--button-outline);
 	outline-offset: var(--button-outline-offset);
 }
@@ -430,7 +430,7 @@ hr {
 .clear_right {
 	clear: inline-end;
 }
-.reset, button.reset {
+.reset {
 	all: unset;
 	outline: revert;
 }
@@ -1118,7 +1118,7 @@ img.sort, .sort {
 	display: block;
 }
 @media (hover) {
-	.top_menu.scrollable {
+	.top_menu.scrollable .body {
 		max-height: var(--topmenu-height);
 		overflow: auto;
 	}
@@ -1317,6 +1317,7 @@ nav#main_menu {
 	align-items: center;
 	background: var(--nav-bg);
 	border-color: var(--nav-border-color);
+	border-radius: var(--nav-border-radius);
 	border-style: var(--nav-border-style);
 	border-width: var(--nav-border-width);
 	display: flex;
@@ -1575,6 +1576,7 @@ nav:where(#genericmenu, #adm_submenus) a:is(:focus, :focus-visible, :focus-withi
 .buttonlist, .buttonlistend, .buttonrow, .pagelinks, .pagesection {
 	align-items: baseline;
 	display: flex;
+	flex-wrap: wrap;
 	gap: 0.5em;
 }
 /* Items in mobile menu must be vertical. */
@@ -1636,7 +1638,7 @@ nav:where(#genericmenu, #adm_submenus) a:is(:focus, :focus-visible, :focus-withi
 	text-shadow: var(--buttonlist-link-text-shadow_hover);
 }
 .buttonlist > li > a:focus,
-.buttonlist > li:has(.top_menu.visible) > a,
+.buttonlist > li:has(.top_menu.visible) > a:not(.active),
 .buttonlist > li.inline_mod_check:is(:focus, :focus-within) {
 	background: var(--buttonlist-link-bg_focus);
 	border-color: var(--buttonlist-link-border-color_focus);
@@ -1705,7 +1707,7 @@ html[lang="el-GR"] .buttonlist > li > a {
 	flex-direction: column;
 	justify-content: center;
 }
-.buttonlist .dropmenu li a span:has(+ span) {
+.buttonlist .dropmenu li a span.text-label:has(+ span) {
 	font-weight: 700;
 }
 .buttonlist .dropmenu li a span ~ span {
@@ -2098,6 +2100,7 @@ ul li.greeting {
 .navigate_section li {
 	align-items: center;
 	display: flex;
+	flex-wrap: wrap;
 	gap: .25em .15em;
 }
 .navigate_section a {
@@ -3133,6 +3136,7 @@ dl.addrules dt.floatleft {
 	height: auto;
 	inset: 0;
 	margin: 0;
+	overscroll-behavior: contain;
 	padding: 0;
 	position: fixed;
 	width: 100%;
@@ -4421,10 +4425,10 @@ h3.profile_hd::before,
 }
 
 /* Topic/Board follow-alert menu */
-.dropmenu .viewport .overview strong {
+.notify_dropdown strong {
 	font-size: 1.1em;
 }
-.dropmenu .viewport .overview a {
+.notify_dropdown a {
 	display: block;
 	padding: 0.5em;
 	text-decoration: none;
@@ -4434,7 +4438,7 @@ h3.profile_hd::before,
 .notify_dropdown a:hover, .notify_dropdown a:focus {
 	border-color: var(--border_color);
 }
-.dropmenu .viewport .overview span {
+.notify_dropdown span {
 	font-size: 0.9em;
 }
 
